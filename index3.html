@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminologies</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Hamburger Menu -->
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#"><img src="images/logo.svg" alt="logo" width="35px" /></a>
+        <div class="name">Image</div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="index3.html">Terminologies</a></li>
+          <li><a href="form.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <div class="terminologies">
+      <div id="card1">
+        <img
+          src="https://images.unsplash.com/photo-1607544836446-70a0f7e0ad95?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="photo"
+          width="100px"
+        />
+        <div class="des">
+          Image Search Engine is a user-friendly web application that allows you
+          to find high-quality images instantly
+        </div>
+      </div>
+      <div id="card1">
+        <img
+          src="https://images.unsplash.com/photo-1508674861872-a51e06c50c9b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGJ1c2luZXNzbWFufGVufDB8fDB8fHww"
+          alt="photo"
+          width="100px"
+        />
+        <div class="des">
+          Built with modern web technologies, the Image Search Engine ensures
+          smooth performance, offering features like real-time search
+        </div>
+      </div>
+      <div id="card1">
+        <img
+          src="https://images.unsplash.com/photo-1607544836657-08d9c1d97afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D"
+          alt="photo"
+          width="100px"
+        />
+        <div class="des">
+          It fetches images from reliable sources, ensuring high-resolution
+          results tailored to your search queries
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copy">AdarshCodeCraft &copy; 2024</div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const themeSwitch = document.getElementById('theme-switch');
+        
+            // Toggle mobile menu
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        
+            // Close menu on outside click
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        
+            // Close menu on link click
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        
+            // Theme switcher
+            themeSwitch.addEventListener('change', function() {
+                if(this.checked) {
+                    document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
+                    document.documentElement.style.setProperty('--text-color', '#ffffff');
+                } else {
+                    document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                    document.documentElement.style.setProperty('--text-color', '#333');
+                }
+            });
+        });
+        </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search Engine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+       <!-- Hamburger Menu -->
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+  </div>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="#"><img src="images/logo.svg" alt="logo" width="35px"></a>
+            <div class="name">Image</div>
+        </div>
+   
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="index3.html">Terminologies</a></li>
+                <li><a href="form.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+ 
+    <section class="section1">
+        <h1>IMAGE<span class="search"> SEARCH ENGINE</span></h1>
+        <div class="para">Effortlessly search and download high-quality images in just a second with AI-powered tool.</div>
+        <button class="btn">
+          <span><a href="explore.html">SEARCH NOW</a>
+            </span>
+        </button>
+    </section>
+    <article>
+      <h1 class="of">Benefit Of <span class="img">Image Search Engine🔍</span></h1>
+    </article>
+    <div class="card">
+      <div class="card1">
+        <img src="images/dowloand.svg" alt="logo" width="30px">
+        <div class="main">Download</div>
+     <div class="para1">Download high-quality images with just one click</div>
+      </div>
+      <div class="card1">
+        <img src="images/search.svg" alt="logo" width="30px">
+        <div class="main">Search</div>
+     <div class="para1">Effortlessly search and discover high-quality images in seconds</div>
+      </div>
+      <div class="card1">
+        <img src="images/instant.svg" alt="logo" width="30px">
+        <div class="main">Instant Result</div>
+     <div class="para1">Experience lightning-fast image search and instant downloads with ease</div>
+      </div>
+    </div>
+    <footer>
+      <div class="copy">AdarshCodeCraft &copy; 2024</div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const hamburger = document.querySelector('.hamburger');
+          const navMenu = document.querySelector('.nav-menu');
+          const themeSwitch = document.getElementById('theme-switch');
+      
+          // Toggle mobile menu
+          hamburger.addEventListener('click', () => {
+              hamburger.classList.toggle('active');
+              navMenu.classList.toggle('active');
+          });
+      
+          // Close menu on outside click
+          document.addEventListener('click', (e) => {
+              if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                  hamburger.classList.remove('active');
+                  navMenu.classList.remove('active');
+              }
+          });
+      
+          // Close menu on link click
+          document.querySelectorAll('.nav-links a').forEach(link => {
+              link.addEventListener('click', () => {
+                  hamburger.classList.remove('active');
+                  navMenu.classList.remove('active');
+              });
+          });
+      
+          // Theme switcher
+          themeSwitch.addEventListener('change', function() {
+              if(this.checked) {
+                  document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
+                  document.documentElement.style.setProperty('--text-color', '#ffffff');
+              } else {
+                  document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                  document.documentElement.style.setProperty('--text-color', '#333');
+              }
+          });
+      });
+      </script>
+      <script src="script.js"></script>
+    </body>
+    </html>

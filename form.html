@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/013/800/226/non_2x/close-up-of-businessman-in-black-formal-suit-doing-call-me-sign-finger-gesture-with-showing-phone-3d-illustration-of-businessman-using-phone-png.png" type="image/x-icon">
+</head>
+<body>
+  <nav class="navbar">
+    <!-- Hamburger Menu -->
+ <div class="hamburger">
+   <span class="bar"></span>
+   <span class="bar"></span>
+   <span class="bar"></span>
+</div>
+     <!-- Logo -->
+     <div class="logo">
+         <a href="#"><img src="images/logo.svg" alt="logo" width="35px"></a>
+         <div class="name">Image</div>
+     </div>
+
+     <!-- Navigation Menu -->
+     <div class="nav-menu">
+         <ul class="nav-links">
+             <li><a href="index.html">Home</a></li>
+             <li><a href="explore.html">Explore</a></li>
+             <li><a href="index3.html">Terminologies</a></li>
+             <li><a href="form.html">Contact</a></li>
+         </ul>
+         <div class="theme-toggle">
+             <label class="switch">
+                 <input type="checkbox" id="theme-switch" />
+                 <span class="slider round"></span>
+             </label>
+         </div>
+     </div>
+ </nav>
+
+     
+<div class="contact-container">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+      <div class="contact-left-title">
+        <h2>Contact Me</h2>
+    </div>
+    <input type="hidden" name="access_key" value="c1af6ed4-d0b1-4187-af6b-e5946b4cd141">
+    <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+    <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+   <button type="send">SEND</button>
+</form>
+</div>
+<footer>
+    
+  <div class="copy">AdarshCodeCraft &copy; 2024</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const themeSwitch = document.getElementById('theme-switch');
+    
+        // Toggle mobile menu
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    
+        // Close menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    
+        // Theme switcher
+        themeSwitch.addEventListener('change', function() {
+            if(this.checked) {
+                document.documentElement.style.setProperty('--bg-color', '#1a1a1a');
+                document.documentElement.style.setProperty('--text-color', '#ffffff');
+            } else {
+                document.documentElement.style.setProperty('--bg-color', '#ffffff');
+                document.documentElement.style.setProperty('--text-color', '#333');
+            }
+        });
+    });
+    </script>
+  
+
+</body>
+</html>
